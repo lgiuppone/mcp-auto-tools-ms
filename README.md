@@ -75,14 +75,6 @@ helm install mcp-server-crd ./mcp-server-crd \
   --values values.yaml
 ```
 
-Or override directly:
-
-```bash
-helm install mcp-server-crd ./mcp-server-crd \
-  --set environment=nonprod \
-  --set ingress.host=mcp-server-crd.dev.example.com
-```
-
 ---
 
 ## 🔌 MCP Client Configuration
