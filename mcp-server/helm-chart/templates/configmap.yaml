@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mcp-tools-config
+data:
+  tools.yml: |
+{{ .Values.config.tools | indent 4 }}

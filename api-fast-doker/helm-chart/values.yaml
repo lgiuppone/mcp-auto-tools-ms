@@ -1,0 +1,9 @@
+environment: nonprod
+image:
+  repository: 916775992448.dkr.ecr.us-east-2.amazonaws.com/api-fast-docker
+  tag: "1"
+  pullPolicy: IfNotPresent
+service:
+  port: 80
+ingress:
+  host: api-fast-docker.dev.api-users

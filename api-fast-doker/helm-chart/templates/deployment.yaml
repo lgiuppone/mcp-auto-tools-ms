@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-fast-docker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-fast-docker
+  template:
+    metadata:
+      labels:
+        app: api-fast-docker
+    spec:
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+

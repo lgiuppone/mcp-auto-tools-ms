@@ -1,0 +1,28 @@
+environment: nonprod
+
+image:
+  repository: 916775992448.dkr.ecr.us-east-2.amazonaws.com/mcp-server-crd
+  tag: "8"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+  targetPort: 8050
+
+ingress:
+  host: mcp-server-crd.dev.api-users
+
+config:
+  tools: |
+    tools:
+      get_api_status:
+        endpoint: https://api-fast-docker.dev.api-users/
+        description: Get root message to verify the API is running.
+
+      fetch_user_by_id:
+        endpoint: https://api-fast-docker.dev.api-users/users/1
+        description: Fetch a specific user by ID from the API.
+
+      get_random_user:
+        endpoint: https://api-fast-docker.dev.api-users/users/random
+        description: Retrieve a randomly selected user (for testing/demo).

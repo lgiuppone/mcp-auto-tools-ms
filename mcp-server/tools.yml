@@ -1,0 +1,8 @@
+tools:
+  fetch_users:
+    endpoint: https://api-fast-docker.dev.api-users/users/1
+    description: Fetch user by ID from external API.
+
+  list_users:
+    endpoint: https://api-fast-docker.dev.api-users/users
+    description: Fetch all users from external API.

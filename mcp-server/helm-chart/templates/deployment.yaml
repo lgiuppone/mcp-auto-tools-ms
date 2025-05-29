@@ -1,0 +1,32 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-server-crd
+  labels:
+    app: mcp-server-crd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-server-crd
+  template:
+    metadata:
+      labels:
+        app: mcp-server-crd
+    spec:
+      containers:
+        - name: mcp-server-crd
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.targetPort }}
+          volumeMounts:
+            - name: tools-config
+              mountPath: /app/tools.yml
+              subPath: tools.yml
+      volumes:
+        - name: tools-config
+          configMap:
+            name: mcp-tools-config
+
