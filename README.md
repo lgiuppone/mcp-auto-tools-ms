@@ -37,7 +37,7 @@ You can define which APIs to expose directly in your `values.yaml` file using th
 environment: nonprod
 
 image:
-  repository: 916775992448.dkr.ecr.us-east-2.amazonaws.com/mcp-server-crd
+  repository: lgiuppone/mcp-server-crd
   tag: "8"
   pullPolicy: IfNotPresent
 
