@@ -1,7 +1,7 @@
 environment: nonprod
 
 image:
-  repository: 916775992448.dkr.ecr.us-east-2.amazonaws.com/mcp-server-crd
+  repository: 916775992448.dkr.ecr.us-east-2.amazonaws.com/mcp-server
   tag: "8"
   pullPolicy: IfNotPresent
 
@@ -10,7 +10,7 @@ service:
   targetPort: 8050
 
 ingress:
-  host: mcp-server-crd.dev.api-users
+  host: mcp-server.dev.api-users
 
 config:
   tools: |

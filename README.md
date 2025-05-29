@@ -17,7 +17,7 @@ This Helm chart dynamically deploys an [MCP (Model Context Protocol)](https://gi
 ## 📦 Chart Structure
 
 ```text
-mcp-server-crd/
+mcp-server/
 ├── Chart.yaml
 ├── values.yaml
 └── templates/
@@ -37,7 +37,7 @@ You can define which APIs to expose directly in your `values.yaml` file using th
 environment: nonprod
 
 image:
-  repository: lgiuppone/mcp-server-crd
+  repository: lgiuppone/mcp-server
   tag: "8"
   pullPolicy: IfNotPresent
 
@@ -46,7 +46,7 @@ service:
   targetPort: 8050
 
 ingress:
-  host: mcp-server-crd.dev.example.com
+  host: mcp-server.dev.example.com
 
 config:
   tools: |
@@ -71,7 +71,7 @@ config:
 ## 🧪 Install the Chart
 
 ```bash
-helm install mcp-server-crd ./mcp-server-crd \
+helm install mcp-server ./mcp-server \
   --values values.yaml
 ```
 
@@ -100,7 +100,7 @@ Once deployed, clients can connect to your MCP server using the following config
 ## 🧹 Uninstall
 
 ```bash
-helm uninstall mcp-server-crd
+helm uninstall mcp-server
 ```
 
 ---

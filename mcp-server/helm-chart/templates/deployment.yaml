@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mcp-server-crd
+  name: mcp-server
   labels:
-    app: mcp-server-crd
+    app: mcp-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mcp-server-crd
+      app: mcp-server
   template:
     metadata:
       labels:
-        app: mcp-server-crd
+        app: mcp-server
     spec:
       containers:
-        - name: mcp-server-crd
+        - name: mcp-server
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
