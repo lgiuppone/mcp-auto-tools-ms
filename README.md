@@ -34,19 +34,6 @@ mcp-server/
 You can define which APIs to expose directly in your `values.yaml` file using the `config.tools` section. Here's an example configuration:
 
 ```yaml
-environment: nonprod
-
-image:
-  repository: lgiuppone/mcp-server
-  tag: "8"
-  pullPolicy: IfNotPresent
-
-service:
-  port: 80
-  targetPort: 8050
-
-ingress:
-  host: mcp-server.dev.example.com
 
 config:
   tools: |
